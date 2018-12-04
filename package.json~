@@ -1,0 +1,59 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/tmp/d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/tmp/d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+        "spec": "/tmp/d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+        "type": "local"
+      },
+      "/tmp/apm-install-dir-1171121-6529-iydbjr.aipory66r"
+    ]
+  ],
+  "_from": "../d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+  "_id": "opal-dark-ui@0.6.0",
+  "_inCache": true,
+  "_location": "/opal-dark-ui",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/tmp/d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/tmp/d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+    "spec": "/tmp/d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+  "_shasum": "9318cb356a76d5120566c3b274c3526cfbb21a64",
+  "_shrinkwrap": null,
+  "_spec": "/tmp/d-1171121-6529-2rx185.cuiqh93sor/package.tgz",
+  "_where": "/tmp/apm-install-dir-1171121-6529-iydbjr.aipory66r",
+  "bugs": {
+    "url": "https://github.com/opal-dark/atom-ui/issues"
+  },
+  "dependencies": {},
+  "description": "Opal Dark UI theme for Atom",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">1.13.0"
+  },
+  "homepage": "https://github.com/opal-dark/atom-ui#readme",
+  "license": "MIT",
+  "name": "opal-dark-ui",
+  "optionalDependencies": {},
+  "readme": "# Opal Dark for Atom UI\n\n> A colorful, neat and dark theme, resembling the sparkling yet restful colors of an opal, for the Atom UI. Matches the Opal Dark Syntax Theme best.\n\n![Screenshot](https://github.com/opal-dark/atom-ui/blob/master/sample.png?raw=true)\n\n## Install\n\nInstall using Atom\n\n1. Go to Atom -> Preferences...\n2. Then select the Install tab\n3. Click the Themes button to the right of the search box\n4. Enter opal-dark-ui in the search box\n5. Enter opal-dark-syntax in the search box. \n\n\n## Team\n\nThe Opal Dark Theme was built from the Dracula Theme.\nModified and maintained by [statisticallyfit](https://github.com/statisticallyfit/EditorThemes/graphs/contributors).\n\nCredits go to this team for creating the Dracula Theme: This theme is maintained by the [following person(s)](https://github.com/dracula/atom-ui/graphs/contributors).\n\n## License\n\n[MIT License](./LICENSE)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opal-dark/atom-ui.git"
+  },
+  "theme": "ui",
+  "version": "1.0.0"
+}

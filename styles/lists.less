@@ -1,0 +1,212 @@
+// Lists
+// -------------------
+
+// Used in different places, like the Tree View, Commmand Palette etc.
+// Overrides: atom/static/lists.less
+
+// List Group -------------------
+.list-group {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border: 1px solid #202020;
+  border-radius: 5px;
+  background-color: #9198a0;
+
+  li {
+    color: #454545;
+    padding-left: @component-padding/2;
+
+    &:nth-child(even) {
+      background: #899199;
+    }
+
+    // We want to highlight the background of the list items because we dont know their size.
+    &.selected {
+      color: @text-color-selected;
+      .render-selected-highlight();
+      &:before{ display: none; }
+    }
+  }
+
+  li:hover {
+    .render-hover-highlight();
+  }
+}
+
+.render-hover-highlight() {
+  background: @dark-gray-violet;
+}
+
+.render-selected-highlight() {
+  background: @dark-gray-violet;
+}
+
+.list-group .selected::before {
+  .render-selected-highlight();
+}
+
+// Select List -------------------
+.select-list {
+  li {
+    padding: @component-padding/2 @component-padding;
+  }
+  .status {
+    float: right;
+  }
+}
+
+// Popover List -------------------
+// Used as a popover for something like autocomplete.
+.select-list.popover-list {
+  @popover-list-padding: @component-padding/2;
+
+  padding: @popover-list-padding;
+  border-radius: 8px;
+  background-color: @indigo; //@overlay-background-color;
+  box-shadow: 0 2px 12px 1px @black;
+
+  .list-group {
+    margin-top: @popover-list-padding;
+    li {
+      // Popover list are given a darker background color, because the foreground text is in light color
+      background-color: @indigo;
+
+      &:nth-child(even) {
+        background: @indigo-lighter;
+      }
+
+
+      padding-left: @popover-list-padding;
+
+      &.selected {
+        background: @dark-gray-violet;
+      }
+    }
+  }
+}
+
+// This is the modified dracula dropdown autocomplete thing -----------------------------
+
+
+/*
+.list-group,
+.list-tree {
+
+
+
+  li:not(.list-nested-item),
+  li.list-nested-item > .list-item {
+    .text(normal);
+  }
+
+  .generate-list-item-text-color(@class) {
+    li:not(.list-nested-item).text-@{class},
+    li.list-nested-item.text-@{class} > .list-item {
+      .text(@class);
+    }
+  }
+  .generate-list-item-text-color(subtle);
+  .generate-list-item-text-color(info);
+  .generate-list-item-text-color(success);
+  .generate-list-item-text-color(warning);
+  .generate-list-item-text-color(error);
+  .generate-list-item-text-color(selected);
+
+  li:not(.list-nested-item).selected,
+  li.list-nested-item.selected > .list-item {
+    .text(selected);
+  }
+}
+
+.select-list ol.list-group,
+&.select-list ol.list-group {
+  li.two-lines {
+    .secondary-line {
+      color: @text-color-subtle;
+    }
+    &.selected .secondary-line {
+      color: fade(@text-color-highlight, 50%);
+      text-shadow: none;
+    }
+  }
+
+  // We want to highlight the background of the list items because we dont
+  // know their size.
+  li.selected {
+    background-color: @dark-gray-violet; //@indigo-gray; //changed @background-color-selected;
+    &:before{ display: none; }
+  }
+
+  &.mark-active {
+    @active-icon-size: 14px;
+
+    // pad in front of the text where the icon would be We'll pad the non-
+    // active items with a 'fake' icon so other classes can pad the item
+    // without worrying about the icon padding.
+    li:before {
+      content: '';
+      background-color: transparent;
+      position: static;
+      display: inline-block;
+      left: auto; right: auto;
+      height: @active-icon-size;
+      width: @active-icon-size;
+    }
+    > li:not(.active):before {
+      margin-right: @component-icon-padding;
+    }
+    li.active {
+      .octicon(check, @active-icon-size);
+      &:before {
+        margin-right: @component-icon-padding;
+        color: @text-color-success;
+      }
+    }
+  }
+}
+
+.select-list.popover-list {
+  background-color: @indigo; //changed @overlay-background-color;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
+  padding: @component-padding/2;
+  border-radius: @component-border-radius;
+
+  atom-text-editor[mini] {
+    margin-bottom: @component-padding/2;
+  }
+
+  .list-group li {
+    padding-left: @component-padding/2;
+  }
+  .list-group {//change starts
+
+      &:nth-child(even) {
+          background: @indigo-lighter;
+      }
+  }//change ends
+}
+
+.ui-sortable {
+  li {
+    line-height: 2.5;
+  }
+
+  // For sortable lists in the settings view
+  li.ui-sortable-placeholder {
+    visibility: visible !important;
+    background-color: darken(@pane-item-background-color, 10%);
+  }
+}
+
+li.ui-draggable-dragging,
+li.ui-sortable-helper {
+  line-height: @component-line-height;
+  height: @component-line-height;
+  border: 0;
+  border-radius: 0;
+  list-style: none;
+  padding: 0 @component-padding;
+  background: @background-color-highlight;
+  box-shadow: 0 0 1px @base-border-color;
+}
+*/

@@ -1,0 +1,214 @@
+@modified-icon-width: 8px;
+@tab-top-padding: 0;
+@tab-bottom-border-height: 3px; //changed SUCCESS was 1px
+@tab-border: 1px solid @tab-border-color;
+@tab-max-width: 160px;
+@tab-min-width: 28px;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  box-shadow: inset 0 -1px 0 @tab-border-color;
+  background: @tab-bar-background-color;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    max-width: @tab-max-width;
+    min-width: @tab-min-width;
+    height: @tab-height;
+    line-height: @tab-height;
+    padding: 0;
+    margin: 0;
+    color: @tab-text-color;
+    background: @tab-background-color;
+    border-right: @tab-border;
+    opacity: @tab-inactive-transparency;
+    transition: opacity .3s;
+
+    //added this change hover part - major SUCCESS!
+    //note: this is for having tabs separators highlight on hover
+    &:hover {
+        border-bottom: @tab-bottom-border-height solid @tab-accent-color;
+    }//change ends
+
+
+    &:last-of-type {
+      border-right-color: transparent;
+    }
+
+    &:hover .close-icon {
+      transform: scale(1);
+      //color: @violet; //changed, added this line
+      //background-color: fade(@indigo, 80%); //changed, added this line
+    }
+
+    .title{
+      position: relative;
+      z-index: 1;
+      padding: 0 8px
+    }
+
+    //commenting out dracula .close icon property here
+
+    .close-icon { //TODO change here in future if want the expanding x when closing tab.
+      right: 0;
+      z-index: 3;
+      margin-right: 8px;
+      text-align: right;
+      line-height: @tab-height - 2px;
+      color: @tab-icon-color;
+      background: inherit;
+      transform: scale(0);
+      transition: transform .1s;
+      background-color: transparent; //changed, added this line
+
+      &:hover {
+        color: inherit;
+        background-color: transparent; //changed, added this line
+      }
+
+      &:active {
+        opacity: .3;
+      }
+
+    }
+  }
+
+
+
+
+
+  .tab.active {
+    z-index: 1;
+    flex: 2 0 auto;
+    padding-right: @modified-icon-width + 2px;
+    background-color: @tab-background-color-active;
+    opacity: 1;
+
+    &:last-of-type {
+      border-right-color: @tab-border-color;
+    }
+
+    & .close-icon {
+      transform: scale(1);
+      background-color: transparent; //changed, added this line
+    }
+    //change SUCCESS starts here: added this to cover up blue vertical bar on active tab on hover.
+    &:hover {
+        //border-left: 0;
+        //border-bottom: @tab-bottom-border-height solid @tab-accent-color;
+        border-bottom: 0;
+    }//change ends here
+
+
+    // Seamless tab border cover
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0px; //changed -1px;
+      border-bottom: @tab-bottom-border-height solid @tab-accent-color; //changed @tab-background-color-active;
+    }
+  }
+
+  .tab.modified {
+    &:not(:hover) .close-icon {
+      right: 0;
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+      border-color: @ui-pink; //changed @tab-accent-color; SUCCESS - this is the circle pink modified tab.
+      transform: scale(2); //changed, was 1, for making pink circle larger
+    }
+
+    &:hover .close-icon:hover {
+      color: @text-color-highlight;
+      //background-color: fade(@indigo, 80%); //changed, added this line
+    }
+  }
+
+  .tab.is-dragging {
+    background: darken(@tab-background-color, 6%);
+    border-color: transparent;
+    opacity: .5;
+    & .close-icon,
+    &:before,
+    &:after {
+      visibility: hidden;
+    }
+  }
+
+
+  .tab.active[data-type="TextEditor"] {
+    color: @tab-text-color-editor;
+    background-color: @tab-background-color-editor;
+    &:after {
+      border-bottom-color: @tab-accent-color; //changed SUCCESS @tab-background-color-editor; HERE
+    }
+  }
+
+
+
+  .placeholder {
+    margin: 0;
+    height: @tab-height + @tab-top-padding;
+    //background: @tab-accent-color; //changed, removed
+    pointer-events: none;
+
+    &:after {
+      top: @tab-height/2 + @tab-top-padding - 5px ;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      border-radius: 0;
+      border: 5px solid;
+      border-color: transparent transparent transparent @tab-accent-color;
+      background: transparent;
+    }
+
+
+    /*
+    &:last-child {
+      margin-left: -2px;
+
+      &:after {
+        margin-left: -10px;
+        //background: @tab-accent-color; # this is the annoying repl border color thing
+        //transform: scaleY(0);
+        //transition: transform .08s;
+        border-color: transparent @tab-border-color transparent transparent; //changed was @tab-accent-color
+      }
+    }
+    */
+
+  }
+
+}
+// Active pane marker --------------
+
+.tab-bar:empty:before,
+.tab-bar .tab:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 0; //was changed 2px;
+  height: @tab-height + @tab-bottom-border-height;
+  //background: @tab-accent-color; # this is the annoying repl border color thing
+  //transform: scaleY(0);
+  //transition: transform .08s;
+}
+
+atom-pane.active .tab-bar:empty:before,
+atom-pane.active .tab.active:before {
+  transform: scaleY(1);
+}
