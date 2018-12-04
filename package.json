@@ -55,5 +55,5 @@
     "url": "git+https://github.com/statisticallyfit/opal-dark-ui.git"
   },
   "theme": "ui",
-  "version": "1.0.0"
+  "version": "2.0.0"
 }
