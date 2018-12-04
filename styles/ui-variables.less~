@@ -12,17 +12,17 @@
 @md-timing-function: cubic-bezier(.4, 0, .2, 1); //change, for the atom docker lip popout
 
 // Color Palette ---------------------------------
-@violet: #969eff; //#7f89ff;
-@gray-violet: #5f78e8;
-@dark-gray-violet: #2f3c77; //#39488e; //#4355a8;
 @magenta: #653f7a;
 @dusk-pink: #d2afe0;
 @pink: #ee97fc; //#f1a3ff; //ff96d2 //use ui-pink instead f1a3ff
 @pink-red: #ffa3e4;
 @indigo: #090033; //#090033; //#000033;
-@indigo-lighter: #17113a; //#191142; //lighten(@indigo, 15%); //#18103a;
+@indigo-lighter: lighten(#17113a, 1%); //#191142; //lighten(@indigo, 15%); //#18103a;
 @indigo-gray: #201d4c; //#322868; // #2e2b3f;
 @blue-gray: #96abff; //#3d3e72;
+@violet: #969eff; //#7f89ff;
+@gray-violet: #5f78e8;
+@dark-gray-violet: #30347a; //#2f3c77; //#39488e; //#4355a8;
 @medium-violet: #4e4ee8; //#6868f2;
 @cyan: #8be9fd; //#7ce9ff; //#59f6ff; // #3fd8ff;
 @light-cyan: #a5ecff;
@@ -68,7 +68,7 @@
 // Var + State Background Colors -------------------------------------
 
 @background-color-info:    @ui-cyan;
-@background-color-success: @ui-pink; @gray-violet; //changed @ui-pink;
+@background-color-success: @ui-pink; //@gray-violet; //changed @ui-pink;
 @background-color-warning: @ui-purple;
 @background-color-error:   @ui-red;
 
@@ -156,7 +156,7 @@
 
 @text-color-info:    @ui-cyan;
 @text-color-success: @ui-green; //changed to check tree view @ui-green;
-@text-color-warning: @yellow; //changed @ui-purple;
+@text-color-warning: @cyan; //changed @ui-purple;
 @text-color-error:   @ui-red;
 
 @text-color-added:    @ui-cyan; //changed @text-color-success;
