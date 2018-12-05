@@ -1,6 +1,6 @@
 # Opal Dark UI for Atom
 
-> A dark, colorful, neat theme, resembling the sparkling colors of an opal, contrasted against an indigo-night editor background, with purple, cyan, and pink ui accents.
+> A dark, colorful, focus-oriented theme with opal-colored accents contrasted against an indigo-night editor background.
 
 ![Screenshot](sample_ui.png)
 
