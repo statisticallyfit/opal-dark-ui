@@ -17,7 +17,8 @@
 @pink: #ee97fc; //#f1a3ff; //ff96d2 //use ui-pink instead f1a3ff
 //@pink-red: #ee97fc; //this new one is for editor tree view //#ffa3e4;
 @light-pink: #fdbcff; //#fdadff;
-@indigo-dark-gray: #1b1b33;
+@indigo-dark-gray: #1b1b33
+@dark-indigo: #0a0621;
 @indigo: #090033; //#090033; //#000033;
 @indigo-lighter: lighten(#17113a, 1%); //#191142; //lighten(@indigo, 15%); //#18103a;
 @indigo-gray: #201d4c; //#322868; // #2e2b3f;
@@ -111,7 +112,7 @@
 @inset-panel-background-color:     lighten(@level-2-color, 4%);
 @inset-panel-border-color:         fadeout(@base-border-color, 15%);
 
-@overlay-background-color:         @level-2-color;
+@overlay-background-color:         darken(@ui-background, 5%); //changed @level-2-color;
 @overlay-border-color:             @base-border-color;
 @overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
 
@@ -125,7 +126,7 @@
 @button-border-color-selected:     @blue-gray; //changed @base-border-color;
 
 @input-border-color:               hsla(0,0%,0%,.2);
-@input-background-color:           hsla(0,0%,0%,.2);
+@input-background-color:           @dark-indigo; //changed hsla(0,0%,0%,.2); //dark indigo to be same as editor
 @input-background-color-focus:     fadein(@input-background-color, 6%);
 @input-selection-color:            darken(@background-color-selected, 6%);
 @input-selection-color-focus:      @background-color-selected;
